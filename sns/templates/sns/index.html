@@ -57,6 +57,8 @@ function sendGroupForm(page) {
             <button class="py-0">share</button></a>
         <a href="{% url 'good' item.id %}">
             <button class="py-0">good!</button></a>
+        <a href="{% url 'deletepost' item.id %}">
+             delete</a>
     </span>
 </td></tr>
 {% endfor %}

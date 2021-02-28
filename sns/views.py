@@ -303,3 +303,10 @@ def get_public():
     public_group = Group.objects.filter \
             (owner=public_user).first()
     return (public_user, public_group)
+
+@login_required(login_url='/admin/login/')
+def deletepost(request,delete_id):
+    # 投稿の削除
+    delete_message=Message.objects.get(id=delete_id)
+    delete_message.delete()
+    return redirect(to='/sns')
